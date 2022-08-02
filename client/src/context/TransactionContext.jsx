@@ -75,7 +75,7 @@ export const TransactionProvider = ({ children }) => {
   const checkIfTransactionsExists = async () => {
     try {
       if (ethereum) {
-        const transactionsContract = createEthereumContract();
+        const transactionsContract = getEtherumContract();
         const currentTransactionCount = await transactionsContract.getTransactionCount();
 
         window.localStorage.setItem("transactionCount", currentTransactionCount);
